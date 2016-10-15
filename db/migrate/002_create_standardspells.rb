@@ -6,6 +6,7 @@ class CreateStandardspells < ActiveRecord::Migration[5.0]
       t.string :name
       t.integer :power
       t.integer :speed
+      t.string :description
     end
   end
 

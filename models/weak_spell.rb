@@ -1,6 +1,6 @@
 require 'active_record'
 #
-class Strongspell < ActiveRecord::Base
+class WeakSpell < ActiveRecord::Base
   belongs_to :spell_list
 
   before_save :adjust_fields

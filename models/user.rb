@@ -6,6 +6,6 @@ class User < ActiveRecord::Base
   before_save :adjust_fields
 
   def adjust_fields
-    name.capitalize!
+    username.capitalize!
   end
 end

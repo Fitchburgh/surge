@@ -3,7 +3,7 @@ require 'active_record'
 class CreateUsers < ActiveRecord::Migration[5.0]
   def up
     create_table :users do |t|
-      t.references :character
+      t.references :character, foreign_key: true
       t.string :username
       t.string :password
     end

@@ -3,9 +3,10 @@ require 'active_record'
 class CreateCharacters < ActiveRecord::Migration[5.0]
   def up
     create_table :characters do |t|
-      t.references :spell_list, foreign_key: true
+      t.references :loadout, foreign_key: true
       t.string :name
       t.integer :health
+      t.string :notes
     end
   end
 
