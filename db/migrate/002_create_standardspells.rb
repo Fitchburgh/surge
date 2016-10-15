@@ -6,7 +6,7 @@ class CreateStandardspells < ActiveRecord::Migration[5.0]
       t.string :name
       t.integer :power
       t.integer :speed
-      t.string :description
+      t.string :description, null: false, default: 'At least be a little creative...'
     end
   end
 

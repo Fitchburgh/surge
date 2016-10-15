@@ -6,6 +6,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.references :character, foreign_key: true
       t.string :username
       t.string :password
+      t.string :notes, null: false, default: 'At least be a little creative...'
     end
   end
 

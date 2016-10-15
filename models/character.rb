@@ -8,7 +8,13 @@ class Character < ActiveRecord::Base
 
   belongs_to :user
 
+  after_initialize :defaults, unless: :persisted?
+
   before_save :adjust_fields
+
+  def defaults
+    self.description ||= 'At least be a little creative...'
+  end
 
   def adjust_fields
     name.capitalize!

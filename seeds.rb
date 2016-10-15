@@ -14,64 +14,57 @@ ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
 WeakSpell.create!(
   name: 'Arcane Dagger',
   power: 1,
-  speed: 5,
-  description: 'test'
+  speed: 5
 )
 
 WeakSpell.create!(
   name: 'Fire Spit',
   power: 2,
-  speed: 6,
-  description: 'test'
+  speed: 6
 )
 
 WeakSpell.create!(
   name: 'Rock Toss',
   power: 3,
-  speed: 7,
-  description: 'test'
+  speed: 7
 )
 
 StandardSpell.create!(
   name: 'Aracane Shot',
   power: 4,
-  speed: 8,
-  description: 'test'
+  speed: 8
 )
 
 StandardSpell.create!(
   name: 'Fire Spin',
   power: 5,
-  speed: 9,
-  description: 'test'
+  speed: 9
 )
 
 StandardSpell.create!(
   name: 'Boulder Throw',
   power: 6,
-  speed: 10,
-  description: 'test'
+  speed: 10
 )
 
 StrongSpell.create!(
   name: 'Arcane Blast',
   power: 7,
-  speed: 11,
-  description: 'test'
+  speed: 11
 )
 
 StrongSpell.create!(
   name: 'Consume',
   power: 8,
   speed: 12,
-  description: 'test'
+
 )
 
 StrongSpell.create!(
   name: 'Earth Split',
   power: 9,
   speed: 13,
-  description: 'test'
+
 )
 
 Loadout.create!(
@@ -215,85 +208,74 @@ Loadout.create!(
 Character.create!(
   loadout_id: 1,
   name: 'Tacopies',
-  health: 50,
-  notes: "Can't beat it"
-)
+  health: 50
+  )
 
 Character.create!(
   loadout_id: 15,
   name: 'Nartdawg',
-  health: 50,
-  notes: "Can't beat it"
+  health: 50
 )
 
 Character.create!(
   loadout_id: 12,
   name: 'Rab',
-  health: 50,
-  notes: "Can't beat it"
+  health: 50
 )
 
 Character.create!(
   loadout_id: 2,
   name: 'Lari',
-  health: 50,
-  notes: "Can't beat it"
+  health: 50
 )
 
 Character.create!(
   loadout_id: 5,
   name: 'Kteich',
-  health: 50,
-  notes: "Can't beat it"
+  health: 50
 )
 
 Character.create!(
   loadout_id: 4,
   name: 'Timtum',
-  health: 50,
-  notes: "Can't beat it"
+  health: 50
 )
 
 Character.create!(
   loadout_id: 7,
   name: 'Bruce',
-  health: 50,
-  notes: "Can't beat it"
+  health: 50
 )
 
 Character.create!(
   loadout_id: 8,
   name: 'Skralex',
   health: 50,
-  notes: ':('
+  description: ':('
 )
 
 Character.create!(
   loadout_id: 18,
   name: 'Gabreel',
-  health: 50,
-  notes: "Can't beat it"
+  health: 50
 )
 
 Character.create!(
   loadout_id: 15,
   name: 'Jenboree',
-  health: 50,
-  notes: "Can't beat it"
+  health: 50
 )
 
 Character.create!(
   loadout_id: 15,
   name: 'Lyser',
-  health: 50,
-  notes: "Can't beat it"
+  health: 50
 )
 
 Character.create!(
   loadout_id: 13,
   name: 'Lienad',
-  health: 50,
-  notes: "Can't beat it"
+  health: 50
 )
 
 User.create!(

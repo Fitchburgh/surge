@@ -6,7 +6,7 @@ class CreateCharacters < ActiveRecord::Migration[5.0]
       t.references :loadout, foreign_key: true
       t.string :name
       t.integer :health
-      t.string :notes
+      t.string :description, null: false, default: 'At least be a little creative...'
     end
   end
 

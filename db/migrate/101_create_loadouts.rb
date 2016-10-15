@@ -6,6 +6,7 @@ class CreateLoadouts < ActiveRecord::Migration[5.0]
       t.references :weak_spell, foreign_key: true
       t.references :standard_spell, foreign_key: true
       t.references :strong_spell, foreign_key: true
+      t.string :description, null: false, default: 'At least be a little creative...'
     end
   end
 
