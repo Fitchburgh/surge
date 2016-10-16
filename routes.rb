@@ -5,7 +5,7 @@ require_relative 'app/models/strong_spell'
 require_relative 'app/models/user'
 require_relative 'app/models/weak_spell'
 
-require 'slim'
+# require 'slim'
 require 'yaml'
 require 'json'
 require 'sinatra'
@@ -16,13 +16,14 @@ require 'sinatra/cross_origin'
 
 before do
   ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
+  content_type :json
 end
 
-set :views, Proc.new { File.open("app/views/") }
+# set :views, Proc.new { File.open("app/views/") }
 
-get '/' do
-  slim :index
-end
+# get '/' do
+#   slim :index
+# end
 # after do
 #   ActiveRecord::Base.connection.close
 # end
@@ -48,11 +49,11 @@ get '/api/character-list' do
   character = Character.where('name like(?)', "%#{params['search']}%").first
   end
   character.to_json
-  slim :index
+  # slim :index
 end
 
 get '/api/character-spells' do
-  slim :index
+  # slim :index
   unless params['search'].nil?
     character = Character.where('name like (?)', "%#{params['search']}%").first
 
@@ -76,12 +77,12 @@ get '/api/character-spells' do
   end
   halt(404) if payload.empty?
   # binding.pry
-  content_type :json
+  # content_type :json
   return payload.to_json
 end
 
 get '/api/my-character' do
-  slim :index
+  # slim :index
   character = Character.where('name like (?)', "%#{params['search']}%").first
 
   # grab specific characters loadout ID's
@@ -103,7 +104,7 @@ get '/api/my-character' do
                       } } }
   halt(404) if payload.empty?
   # binding.pry
-  content_type :json
+  # content_type :json
   return payload.to_json
 end
 

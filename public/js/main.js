@@ -5,53 +5,18 @@ function Character() {
 }
 
 var $loadout = $("#loadout")
-var searchString = $('#userInput').val();
-
-// $('#userInput').keypress(function(event) {
-//
-//     if (event.which == 13) {
-//         getMyCharacter(searchString);
-//         // return false;
-//     }
-// });
-
-$("#searchButton").on("click", function getMyCharacter(searchString) {
-  console.log(searchString);
-  $.ajax({
-    method: 'GET',
-    url: '/api/my-character?search=' + encodeURIComponent(searchString),
-    datatype: 'json',
-    success: (function(data){
-
-      console.log(data);
 
 
-      var charName = data.character.name,
-          weakSpell = data.character.loadout.weakSpell.name,
-          weakSpellPower = data.character.loadout.weakSpell.power,
-          weakSpellTimer = data.character.loadout.weakSpell.speed,
-          standardSpell = data.character.loadout.standardSpell.name,
-          standardSpellPower = data.character.loadout.standardSpell.power,
-          standardSpellTimer = data.character.loadout.standardSpell.speed,
-          strongSpell = data.character.loadout.strongSpell.name,
-          strongSpellPower = data.character.loadout.strongSpell.power,
-          strongSpellTimer = data.character.loadout.strongSpell.speed;
-
-        $(".charName").append("<h3>" + charName + " </h3>");
-        $("#weak-spell").append("<li>" + weakSpell + " </li>");
-        $("#weak-spell").append("<li>" + weakSpellPower + " </li>");
-        $("#weak-spell").append("<li>" + weakSpellTimer + " </li>");
-        $("#standard-spell").append("<li>" + standardSpell + " </li>");
-        $("#standard-spell").append("<li>" + standardSpellPower + " </li>");
-        $("#standard-spell").append("<li>" + standardSpellTimer + " </li>");
-        $("#strong-spell").append("<li>" + strongSpell + " </li>");
-        $("#strong-spell").append("<li>" + strongSpellPower + " </li>");
-        $("#strong-spell").append("<li>" + strongSpellTimer + " </li>");
-      })
-  });
-})
+$('#userInput').keypress(function(event) {
+  var searchString = $('#userInput').val();
+    if (event.which == 13) {
+        getMyCharacter(searchString);
+        // return false;
+    }
+});
 
 // GET loadout for a character
+
 function getMyCharacter(searchString) {
   $.ajax({
     method: 'GET',
@@ -86,7 +51,8 @@ function getMyCharacter(searchString) {
       })
   });
 }
-getMyCharacter(searchString);
+
+
 
 // module.exports = Calculator;
 
