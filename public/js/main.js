@@ -13,7 +13,7 @@ $(document).on({
      ajaxStop: function() { $body.removeClass("loading"); }
 });
 
-$('#userInput').keypress(function(event) {
+$('#userInput').keyup(function(event) {
   var searchString = $('#userInput').val();
     if (event.which == 13) {
         $(".charName").empty();
@@ -26,9 +26,15 @@ $('#userInput').keypress(function(event) {
 
         return false;
     }
+    if (event.which == 27) {
+      $(".allCharData").fadeOut(500);
+      $(".swap").fadeOut(500);
+      $(".charInfo").fadeOut(500);
+
+    }
 });
 
-$('.newUserInput').keypress(function(event) {
+$('.newUserInput').keyup(function(event) {
   var newUserInput = $('.newUserInput').val();
     if (event.which == 13) {
       // $(".charName").empty();
@@ -38,6 +44,9 @@ $('.newUserInput').keypress(function(event) {
       // $("#userInput").val("");
       createNewUser(newUserInput);
       return false;
+    }
+    if (event.which == 27) {
+      $(".newUserPanel").fadeOut(500);
     }
 });
 
