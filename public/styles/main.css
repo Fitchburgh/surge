@@ -1,3 +1,11 @@
 body {
   background-color: black ;
 }
+
+.white-text {
+  color: white;
+}
+
+.swap, .charInfo {
+  display: none;
+}

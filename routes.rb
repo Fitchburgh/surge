@@ -108,6 +108,23 @@ get '/api/my-character' do
   return payload.to_json
 end
 
+put '/api/change-spell' do
+  new_piece = Armor.new(
+    id: Armor.maximum(:id).next,
+    armor_slot: params[:armor_slot],
+    armor_name: params[:armor_name],
+    description: params[:description]
+  )
+  if new_piece.valid?
+    if new_piece.save
+      status 201
+      return new_piece.to_json
+    end
+    status 400
+  end
+  halt(400)
+end
+
 # post '/api/registrations' do
 #   @user = User.new(name: params[:name], password: params[:password])
 #   @user.save if @user.valid?

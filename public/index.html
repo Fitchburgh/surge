@@ -9,21 +9,30 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-lg-6">
-          <div class="input-group">
-            <input type="text" class="form-control" id="userInput" placeholder="Search by name...">
+        <div class="col-lg-4">
+          <div class="input-group"><h2 class="white-text">Select Character</h2>
+            <input type="text" class="form-control" id="userInput" placeholder="Enter Name...">
           </div>
           <div class="panel panel-default col-md-6 offset-md-3">
-            <div class="panel-heading"><h4>Character: </h4>
+            <div class="panel-heading">
               <h2 class="panel-title charName">
             </div>
             <div class="panel-body charInfo">
               <ul id="loadout">
               <h3> Weak Spell </h3>
+                <div class="input-group swap">
+                  <input type="text" class="form-control" id="weakSwap" placeholder="Swap Spell">
+                </div>
                 <ul id="weak-spell"></ul>
               <h3> Standard Spell </h3>
+                <div class="input-group swap">
+                  <input type="text" class="form-control swap" id="standardSwap" placeholder="Swap Spell">
+                </div>
                 <ul id="standard-spell"></ul>
               <h3> Strong Spell </h3>
+                <div class="input-group swap">
+                  <input type="text" class="form-control swap" id="strongSwap" placeholder="Swap Spell">
+                </div>
                 <ul id="strong-spell"></ul>
               </ul>
             </div>

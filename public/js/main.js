@@ -48,6 +48,8 @@ function getMyCharacter(searchString) {
         $("#strong-spell").append("<li>" + strongSpell + " </li>");
         $("#strong-spell").append("<li>" + strongSpellPower + " </li>");
         $("#strong-spell").append("<li>" + strongSpellTimer + " </li>");
+        $(".swap").fadeIn();
+        $(".charInfo").fadeIn();
       })
   });
 }
