@@ -65,31 +65,29 @@ $('.newUserInput').keyup(function(event) {
     }
 });
 
-$('#strongSwap').keyup(function(event) {
-  var weakSwapInput = $('.weakSwapButtons').val();
-    if (event.which == 13) {
-      // $(".charName").empty();
-      // $("#weak-spell").empty();
-      // $("#standard-spell").empty();
-      // $("#strong-spell").empty();
-      // $("#userInput").val("");
-      createNewUser(newUserInput);
-      return false;
-    }
-    if (event.which == 27) {
-      $(".weakSwapButtons").fadeOut(500);
-    }
-});
-
-function swapWeakSpell(weakSwapInput) {
+$('.weakSwapSubmit').click(function() {
+  $(".allCharData").fadeOut(4300);
+  $(".swap").fadeOut(3000);
+  $(".charInfo").fadeOut(1000);
   $(".weakSwapButtons").fadeIn(1000);
-}
+});
+    // $(".charName").empty();
+    // $("#weak-spell").empty();
+    // $("#standard-spell").empty();
+    // $("#strong-spell").empty();
+    // $("#userInput").val("");
+
+
+// function swapWeakSpell() {
+//
+// }
 
 function createNewUser(newUserInput) {
   $(".newUserPanel").fadeIn(1000);
   $(".newUserInput").keyup(function(){
     $("#newUsername").val(this.value);
-});
+  });
+  $('#newUsername').focus()
 }
 
 // GET loadout for a character

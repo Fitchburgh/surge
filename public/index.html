@@ -22,7 +22,8 @@
                   <ul id="loadout pull-left">
                     <h3> Weak Spell </h3>
                     <div class="input-group swap">
-                      <input type="text" class="form-control swap" id="weakSwap" placeholder="Swap Spell">
+                      <button type="submit" class="btn btn-primary weakSwapSubmit">Swap Weak</button>
+                      <!-- <input type="text" class="form-control swap" id="weakSwap" placeholder="Swap Spell"> -->
                     </div>
                     <ul id="weak-spell" class="spell-ul"></ul>
                     <h3> Standard Spell </h3>
@@ -33,30 +34,30 @@
                     <h3> Strong Spell </h3>
                     <div class="input-group swap">
                       <input type="text" class="form-control swap" id="strongSwap" placeholder="Swap Spell">
-                      <fieldset class="form-group weakSwapButtons">
-                        <legend>Which Weak Spell</legend>
-                        <div class="form-check">
-                          <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optionsRadios" id="weakAgainstSpell" value="option1" checked>
-                            element of spell weaker to it
-                          </label>
-                        </div>
-                        <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optionsRadios" id="weakToSpell" value="option2">
-                            Element of spell opposite
-                          </label>
-                        </div>
-                        <div class="form-check disabled">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optionsRadios" id="currentWeakSpell" value="option3" disabled>
-                            Currently Using This Spell
-                          </label>
-                        </div>
-                      </fieldset>
                     </div>
                     <ul id="strong-spell" class="spell-ul"></ul>
                   </ul>
+                  <fieldset class="form-group weakSwapButtons">
+                    <legend>Which Weak Spell</legend>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="optionsRadios" id="weakAgainstSpell" value="option1" checked>
+                          Element of spell weaker to it
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="optionsRadios" id="weakToSpell" value="option2">
+                          Element of spell opposite
+                      </label>
+                    </div>
+                    <div class="form-check disabled">
+                      <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="optionsRadios" id="currentWeakSpell" value="option3" disabled>
+                          Currently Using This Spell
+                      </label>
+                    </div>
+                  </fieldset>
                 </div>
               </div>
             </div>
@@ -81,7 +82,7 @@
                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                       </div>
                       <div class="form-group">
-                      <button type="submit" class="btn btn-primary">Submit</button>
+                      <button type="submit" class="btn btn-primary newUserSubmitBtn">Submit</button>
                       </div>
                     </form>
                   </div>

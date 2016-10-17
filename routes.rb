@@ -52,35 +52,6 @@ get '/api/character-list' do
   # slim :index
 end
 
-get '/api/character-spells' do
-  # slim :index
-  unless params['search'].nil?
-    character = Character.where('name like (?)', "%#{params['search']}%").first
-
-    # grab specific characters loadout ID's
-    payload = Loadout.where(id: character.loadout_id).first
-
-    # grab spell statistics
-    weak_spell = WeakSpell.where(id: payload.weak_spell_id).first
-    standard_spell = StandardSpell.where(id: payload.standard_spell_id).first
-    strong_spell = StrongSpell.where(id: payload.strong_spell_id).first
-
-    # return nested hash with all info
-    payload = { 'Character' =>
-      { 'Name' => character.name,
-        'Health Pool' => character.health,
-        'Description' => character.description,
-        'Loadout' => { 'Weak Spell' => weak_spell,
-                       'Standard Spell' => standard_spell,
-                       'Strong Spell' => strong_spell
-                      } } }
-  end
-  halt(404) if payload.empty?
-  # binding.pry
-  # content_type :json
-  return payload.to_json
-end
-
 get '/api/my-character' do
   # slim :index
   character = Character.where('name like (?)', "%#{params['search']}%").first
@@ -108,22 +79,46 @@ get '/api/my-character' do
   return payload.to_json
 end
 
-put '/api/change-weak-spell' do
-  new_spell = WeakSpell.new(
-    id: WeakSpell.maximum(:id).next,
-    armor_slot: params[:armor_slot],
-    armor_name: params[:armor_name],
-    description: params[:description]
-  )
-  if new_piece.valid?
-    if new_piece.save
-      status 201
-      return new_piece.to_json
-    end
-    status 400
-  end
-  halt(400)
-end
+# put '/api/change-weak-spell' do
+#   new_spell = WeakSpell.new()
+#   if new_piece.valid?
+#     if new_piece.save
+#       status 201
+#       return new_piece.to_json
+#     end
+#     status 400
+#   end
+#   halt(400)
+# end
+
+# get '/api/character-spells' do
+#   # slim :index
+#   unless params['search'].nil?
+#     character = Character.where('name like (?)', "%#{params['search']}%").first
+#
+#     # grab specific characters loadout ID's
+#     payload = Loadout.where(id: character.loadout_id).first
+#
+#     # grab spell statistics
+#     weak_spell = WeakSpell.where(id: payload.weak_spell_id).first
+#     standard_spell = StandardSpell.where(id: payload.standard_spell_id).first
+#     strong_spell = StrongSpell.where(id: payload.strong_spell_id).first
+#
+#     # return nested hash with all info
+#     payload = { 'Character' =>
+#       { 'Name' => character.name,
+#         'Health Pool' => character.health,
+#         'Description' => character.description,
+#         'Loadout' => { 'Weak Spell' => weak_spell,
+#                        'Standard Spell' => standard_spell,
+#                        'Strong Spell' => strong_spell
+#                       } } }
+#   end
+#   halt(404) if payload.empty?
+#   # binding.pry
+#   # content_type :json
+#   return payload.to_json
+# end
 
 # post '/api/registrations' do
 #   @user = User.new(name: params[:name], password: params[:password])

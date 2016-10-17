@@ -55,6 +55,11 @@ body.loading .pacLoad {
   display: block;
 }
 
+.newUserPanel {
+  position: relative;
+  top: -34.124px;
+}
+
 .selectCharacterCol {
   background-color: white;
   height: 1000px;
