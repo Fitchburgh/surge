@@ -39,17 +39,18 @@ function getMyCharacter(searchString) {
           strongSpellTimer = data.character.loadout.strongSpell.speed;
 
         $(".charName").append("<h3>" + charName + " </h3>");
-        $("#weak-spell").append("<li>" + weakSpell + " </li>");
-        $("#weak-spell").append("<li>" + weakSpellPower + " </li>");
-        $("#weak-spell").append("<li>" + weakSpellTimer + " </li>");
-        $("#standard-spell").append("<li>" + standardSpell + " </li>");
-        $("#standard-spell").append("<li>" + standardSpellPower + " </li>");
-        $("#standard-spell").append("<li>" + standardSpellTimer + " </li>");
-        $("#strong-spell").append("<li>" + strongSpell + " </li>");
-        $("#strong-spell").append("<li>" + strongSpellPower + " </li>");
-        $("#strong-spell").append("<li>" + strongSpellTimer + " </li>");
-        $(".swap").fadeIn();
-        $(".charInfo").fadeIn();
+        $("#weak-spell").append("<li>" + "Spell ≈ " + weakSpell + " </li>");
+        $("#weak-spell").append("<li>" + "Power ≈ " + weakSpellPower + " </li>");
+        $("#weak-spell").append("<li>" + "Timer ≈ " + weakSpellTimer + " </li>");
+        $("#standard-spell").append("<li>" + "Spell ≈ " + standardSpell + " </li>");
+        $("#standard-spell").append("<li>" + "Power ≈ " + standardSpellPower + " </li>");
+        $("#standard-spell").append("<li>" + "Timer ≈ " + standardSpellTimer + " </li>");
+        $("#strong-spell").append("<li>" + "Spell ≈ " + strongSpell + " </li>");
+        $("#strong-spell").append("<li>" + "Power ≈ " + strongSpellPower + " </li>");
+        $("#strong-spell").append("<li>" + "Timer ≈ " + strongSpellTimer + " </li>");
+        $(".allCharData").fadeIn(1000);
+        $(".swap").fadeIn(5000);
+        $(".charInfo").fadeIn(3000);
       })
   });
 }

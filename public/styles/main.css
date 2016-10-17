@@ -6,6 +6,14 @@ body {
   color: white;
 }
 
-.swap, .charInfo {
+.swap, .charInfo, .allCharData {
   display: none;
+}
+
+.charHeader {
+  color: yellow;
+}
+
+ul {
+  list-style: none;
 }
