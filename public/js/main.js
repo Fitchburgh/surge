@@ -6,12 +6,26 @@ function Character() {
 
 var $loadout = $("#loadout")
 
+$body = $("body");
+
+// I know I know document. - Try to find another way to do this 
+$(document).on({
+    ajaxStart: function() { $body.addClass("loading");    },
+     ajaxStop: function() { $body.removeClass("loading"); }
+});
 
 $('#userInput').keypress(function(event) {
   var searchString = $('#userInput').val();
     if (event.which == 13) {
+        $(".charName").empty();
+        $("#weak-spell").empty();
+        $("#standard-spell").empty();
+        $("#strong-spell").empty();
+        $("#userInput").val("");
+
         getMyCharacter(searchString);
-        // return false;
+
+        return false;
     }
 });
 
@@ -37,7 +51,6 @@ function getMyCharacter(searchString) {
           strongSpell = data.character.loadout.strongSpell.name,
           strongSpellPower = data.character.loadout.strongSpell.power,
           strongSpellTimer = data.character.loadout.strongSpell.speed;
-
         $(".charName").append("<h3>" + charName + " </h3>");
         $("#weak-spell").append("<li>" + "Spell ≈ " + weakSpell + " </li>");
         $("#weak-spell").append("<li>" + "Power ≈ " + weakSpellPower + " </li>");
@@ -49,7 +62,7 @@ function getMyCharacter(searchString) {
         $("#strong-spell").append("<li>" + "Power ≈ " + strongSpellPower + " </li>");
         $("#strong-spell").append("<li>" + "Timer ≈ " + strongSpellTimer + " </li>");
         $(".allCharData").fadeIn(1000);
-        $(".swap").fadeIn(5000);
+        $(".swap").fadeIn(4300);
         $(".charInfo").fadeIn(3000);
       })
   });
