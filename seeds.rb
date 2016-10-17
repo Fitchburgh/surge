@@ -281,72 +281,84 @@ Character.create!(
 User.create!(
   character_id: 1,
   username: 'Fitch',
+  email: 'asdf',
   password: 'asdf'
 )
 
 User.create!(
   character_id: 2,
   username: 'Nate',
+  email: 'asdf',
   password: 'asdf'
 )
 
 User.create!(
   character_id: 3,
   username: 'Rob',
+  email: 'asdf',
   password: 'asdf'
 )
 
 User.create!(
   character_id: 4,
   username: 'Lori',
+  email: 'asdf',
   password: 'asdf'
 )
 
 User.create!(
   character_id: 5,
   username: 'Kristine',
+  email: 'asdf',
   password: 'asdf'
 )
 
 User.create!(
   character_id: 6,
   username: 'Tim',
+  email: 'asdf',
   password: 'asdf'
 )
 
 User.create!(
   character_id: 7,
   username: 'Bryce',
+  email: 'asdf',
   password: 'asdf'
 )
 
 User.create!(
   character_id: 8,
   username: 'Alex',
+  email: 'asdf',
   password: 'asdf'
 )
 
 User.create!(
   character_id: 9,
   username: 'Gabe',
+  email: 'asdf',
   password: 'asdf'
 )
 
 User.create!(
   character_id: 10,
   username: 'Jenn',
+  email: 'asdf',
   password: 'asdf'
 )
 
 User.create!(
   character_id: 11,
   username: 'Alyssa',
+  email: 'asdf',
   password: 'asdf'
 )
 
 User.create!(
   character_id: 12,
   username: 'Dan',
+  email: 'asdf',
   password: 'asdf'
 )
 # ActiveRecord::Base.connection.close

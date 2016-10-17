@@ -1,9 +1,19 @@
 body {
-  background-color: black ;
+  background-color: black;
 }
 
-.white-text {
-  color: white;
+/*.main-data {
+  text-align: center;
+}*/
+
+#sidebarPic {
+  height: 500px;
+  style: relative;
+}
+
+.newUserPanel {
+  color: black;
+  display: none;
 }
 
 .swap, .charInfo, .allCharData {
@@ -14,28 +24,45 @@ body {
   color: yellow;
 }
 
+#loadout {
+  text-align: left;
+}
+
 ul {
   list-style: none;
+  text-align: left;
 }
 
 .pacLoad {
-    display:    none;
-    position:   fixed;
-    z-index:    1000;
-    top:        0;
-    left:       0;
-    height:     100%;
-    width:      100%;
-    background: rgba( 255, 255, 255, .8 )
-                url('images/ajax-loader.gif')
-                50% 50%
-                no-repeat;
+  display:    none;
+  position:   fixed;
+  z-index:    1000;
+  top:        0;
+  left:       0;
+  height:     100%;
+  width:      100%;
+  background: rgba( 255, 255, 255, .8 )
+              url('images/fire-and-ice.gif')
+              50% 50%
+              no-repeat;
 }
 
 body.loading {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 body.loading .pacLoad {
-    display: block;
+  display: block;
+}
+
+.selectCharacterCol {
+  background-color: white;
+  color: black;
+  text-align: justify;
+}
+
+.newUserCol {
+  background-color: black;
+  color: white;
+  text-align: justify;
 }

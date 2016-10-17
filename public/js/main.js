@@ -4,11 +4,10 @@ function Character() {
 
 }
 
-var $loadout = $("#loadout")
+var $loadout = $("#loadout");
 
-$body = $("body");
-
-// I know I know document. - Try to find another way to do this 
+var $body = $("body");
+// I know I know document. - Try to find another way to do this
 $(document).on({
     ajaxStart: function() { $body.addClass("loading");    },
      ajaxStop: function() { $body.removeClass("loading"); }
@@ -28,6 +27,26 @@ $('#userInput').keypress(function(event) {
         return false;
     }
 });
+
+$('.newUserInput').keypress(function(event) {
+  var newUserInput = $('.newUserInput').val();
+    if (event.which == 13) {
+      // $(".charName").empty();
+      // $("#weak-spell").empty();
+      // $("#standard-spell").empty();
+      // $("#strong-spell").empty();
+      // $("#userInput").val("");
+      createNewUser(newUserInput);
+      return false;
+    }
+});
+
+function createNewUser(newUserInput) {
+  $(".newUserPanel").fadeIn(1000);
+  $(".newUserInput").keyup(function(){
+    $("#newUsername").val(this.value);
+});
+}
 
 // GET loadout for a character
 
