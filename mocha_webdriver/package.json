@@ -1,0 +1,19 @@
+{
+  "name": "mocha_webdriver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2",
+    "wdio-mocha-framework": "^0.4.3",
+    "wdio-spec-reporter": "0.0.3",
+    "webdriverio": "^4.2.16"
+  }
+}

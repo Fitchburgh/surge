@@ -1,16 +1,32 @@
 console.log('hi mom');
 
-function Character() {
-
-}
+// var webdriverio = require('webdriverio');
+//
+// var options = {
+//     desiredCapabilities: {
+//         browserName: 'chrome'
+//     }
+// };
+//
+// var browser = webdriverio.remote(options).init();
+//
+// browser.url('localhost:9393/index.html?')
+//   .click('form-control')
+//   .setValue('Tacopies')
+//   .keys('Enter')
+//   .pause(5000)
+//
+// function Character() {
+//
+// }
 
 var $loadout = $("#loadout");
 
 var $body = $("body");
 // I know I know document. - Try to find another way to do this
 $(document).on({
-    ajaxStart: function() { $body.addClass("loading");    },
-     ajaxStop: function() { $body.removeClass("loading"); }
+    ajaxStart: function() { $body.addClass("loading");},
+     ajaxStop: function() { $body.removeClass("loading");}
 });
 
 $('#userInput').keyup(function(event) {
@@ -30,7 +46,6 @@ $('#userInput').keyup(function(event) {
       $(".allCharData").fadeOut(500);
       $(".swap").fadeOut(500);
       $(".charInfo").fadeOut(500);
-
     }
 });
 
@@ -50,6 +65,26 @@ $('.newUserInput').keyup(function(event) {
     }
 });
 
+$('#strongSwap').keyup(function(event) {
+  var weakSwapInput = $('.weakSwapButtons').val();
+    if (event.which == 13) {
+      // $(".charName").empty();
+      // $("#weak-spell").empty();
+      // $("#standard-spell").empty();
+      // $("#strong-spell").empty();
+      // $("#userInput").val("");
+      createNewUser(newUserInput);
+      return false;
+    }
+    if (event.which == 27) {
+      $(".weakSwapButtons").fadeOut(500);
+    }
+});
+
+function swapWeakSpell(weakSwapInput) {
+  $(".weakSwapButtons").fadeIn(1000);
+}
+
 function createNewUser(newUserInput) {
   $(".newUserPanel").fadeIn(1000);
   $(".newUserInput").keyup(function(){
@@ -67,7 +102,6 @@ function getMyCharacter(searchString) {
     success: (function(data){
 
       console.log(data);
-
 
       var charName = data.character.name,
           weakSpell = data.character.loadout.weakSpell.name,

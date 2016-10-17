@@ -16,7 +16,7 @@ body {
   display: none;
 }
 
-.swap, .charInfo, .allCharData {
+.swap, .charInfo, .allCharData, .weakSwapButtons {
   display: none;
 }
 

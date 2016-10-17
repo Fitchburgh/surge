@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Fitchburgh/surge#readme",
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^3.1.2"
+    "mocha": "^3.1.2",
+    "webdriverio": "^4.2.16"
   }
 }

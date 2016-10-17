@@ -33,6 +33,27 @@
                     <h3> Strong Spell </h3>
                     <div class="input-group swap">
                       <input type="text" class="form-control swap" id="strongSwap" placeholder="Swap Spell">
+                      <fieldset class="form-group weakSwapButtons">
+                        <legend>Which Weak Spell</legend>
+                        <div class="form-check">
+                          <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="optionsRadios" id="weakAgainstSpell" value="option1" checked>
+                            element of spell weaker to it
+                          </label>
+                        </div>
+                        <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="optionsRadios" id="weakToSpell" value="option2">
+                            Element of spell opposite
+                          </label>
+                        </div>
+                        <div class="form-check disabled">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="optionsRadios" id="currentWeakSpell" value="option3" disabled>
+                            Currently Using This Spell
+                          </label>
+                        </div>
+                      </fieldset>
                     </div>
                     <ul id="strong-spell" class="spell-ul"></ul>
                   </ul>

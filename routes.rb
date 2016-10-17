@@ -108,9 +108,9 @@ get '/api/my-character' do
   return payload.to_json
 end
 
-put '/api/change-spell' do
-  new_piece = Armor.new(
-    id: Armor.maximum(:id).next,
+put '/api/change-weak-spell' do
+  new_spell = WeakSpell.new(
+    id: WeakSpell.maximum(:id).next,
     armor_slot: params[:armor_slot],
     armor_name: params[:armor_name],
     description: params[:description]
